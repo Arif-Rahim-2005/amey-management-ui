@@ -34,7 +34,7 @@ const DESTINATIONS = [
   },
 ];
 
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 // Temporary sample data.
 // We will replace this with data from your Flask backend.
 
@@ -207,7 +207,7 @@ function Dashboard() {
       }
 
       try {
-        const response = await fetch(`${API_BASE_URL}/files`, {
+        const response = await fetch(`${API_URL}/files`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,

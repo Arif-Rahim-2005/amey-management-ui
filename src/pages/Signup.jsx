@@ -15,6 +15,8 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   async function handleSignup(event) {
     event.preventDefault();
     setError("");
@@ -32,7 +34,7 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/signup", {
+      const response = await fetch(`${API_URL}signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

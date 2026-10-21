@@ -22,7 +22,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const FILE_FIELDS = [
   { name: "category", label: "Destination / Category", required: true },
@@ -192,7 +192,7 @@ function normalizePayload(form, fields) {
 async function apiRequest(path, options = {}) {
   const token = sessionStorage.getItem("access_token");
 
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(`${API_URL}${path}`, {
     ...options,
     headers: {
       ...(options.body ? { "Content-Type": "application/json" } : {}),

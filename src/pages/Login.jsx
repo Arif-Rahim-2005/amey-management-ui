@@ -12,7 +12,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
-
+  const API_URL = import.meta.env.VITE_API_URL;
   async function handleLogin(event) {
     event.preventDefault();
 
@@ -20,7 +20,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/login", {
+      const response = await fetch(`${API_URL}login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export default function Login() {
       sessionStorage.setItem("access_token", data.access_token);
       sessionStorage.setItem("user", JSON.stringify(data.user));
 
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       setError(
         "Unable to connect to the server. Please check that the backend is running.",
