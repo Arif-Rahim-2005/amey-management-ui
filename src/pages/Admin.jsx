@@ -51,7 +51,7 @@ export default function Admin() {
 
   const apiRequest = useCallback(
     async (endpoint, options = {}) => {
-      const response = await fetch(`${API_URL}${endpoint}`, {
+      const response = await fetch(`${API_URL}/${endpoint}`, {
         ...options,
         headers: {
           "Content-Type": "application/json",
