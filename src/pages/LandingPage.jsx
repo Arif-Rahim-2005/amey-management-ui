@@ -62,9 +62,12 @@ export default function LandingPage() {
   ];
 
 
-const [showIntro, setShowIntro] = useState(true);
-
+const [showIntro, setShowIntro] = useState(() => {
+  return !sessionStorage.getItem("amey_intro_shown");
+});
+  
 const handleIntroDone = useCallback(() => {
+  sessionStorage.setItem("amey_intro_shown", "true");
   setShowIntro(false);
 }, []);
 
