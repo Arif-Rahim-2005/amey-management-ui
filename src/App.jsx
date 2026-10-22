@@ -24,7 +24,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* Public pages */}
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Navigate to= "/login" replace/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/pending-approval" element={<PendingApproval />} />

@@ -662,7 +662,7 @@ export default function FileDetails() {
               Try again
             </button>
             <Link
-              to="/"
+              to="/dashboard"
               className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
             >
               Back to dashboard

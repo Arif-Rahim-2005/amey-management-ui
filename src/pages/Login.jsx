@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import cargoHero from "../assets/cargo-hero.jpg";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { IntroAnimation } from "../components/IntroAnimation";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -63,7 +64,17 @@ export default function Login() {
     { name: "Local / Kenya", color: "bg-red-500" },
   ];
 
-  return (
+  const [showIntro, setShowIntro] = useState(() => {
+    return !sessionStorage.getItem("amey_intro_shown");
+  });
+
+  const handleIntroDone = useCallback(() => {
+    sessionStorage.setItem("amey_intro_shown", "true");
+    setShowIntro(false);
+  }, []);
+
+  return <>
+          {showIntro && <IntroAnimation onDone={handleIntroDone} />}{" "}
     <main className="min-h-screen bg-slate-50 lg:grid lg:grid-cols-[1.05fr_1fr]">
       {/* Left branding panel */}
       <section className="relative hidden min-h-screen flex-col justify-between overflow-hidden bg-navy p-12 text-white lg:flex">
@@ -246,5 +257,5 @@ export default function Login() {
         </div>
       </section>
     </main>
-  );
+  </>
 }
