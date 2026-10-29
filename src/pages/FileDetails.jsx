@@ -687,7 +687,7 @@ export default function FileDetails() {
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-700"
         >
           <ArrowLeft size={17} />
-          Back to dashboard
+          Go back to dashboard
         </Link>
 
         {notice && (
