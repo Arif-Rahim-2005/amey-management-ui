@@ -298,7 +298,7 @@ export default function CreateFile() {
         {/* Page heading */}
         <div className="mb-7">
           <Link
-            to="/"
+            to="/dashboard"
             className="mb-5 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900"
           >
             <ArrowLeft size={16} />
