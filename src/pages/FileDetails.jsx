@@ -683,7 +683,7 @@ export default function FileDetails() {
     <main className="min-h-screen bg-slate-50 px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
         <Link
-          to="/"
+          to="/dashboard"
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-700"
         >
           <ArrowLeft size={17} />
